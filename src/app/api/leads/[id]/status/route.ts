@@ -4,10 +4,15 @@ import fs from "fs";
 import { Lead } from "@/types";
 import { writeFile } from "fs/promises";
 
-export async function PUT(
-  request: NextRequest,
-  context: { params: { id: string } }
-) {
+interface RouteParams {
+  id: string;
+}
+
+interface RouteContext {
+  params: RouteParams;
+}
+
+export async function PUT(request: NextRequest, context: RouteContext) {
   const cookie = request.headers.get("cookie");
   const tokenMatch = cookie?.match(/token=([^;]+)/);
   const token = tokenMatch ? tokenMatch[1] : null;
