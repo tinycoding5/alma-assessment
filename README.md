@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## User Credential
 
-email: admin@alma.com.
+email: admin@alma.com
 
 password: password123
 
