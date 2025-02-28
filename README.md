@@ -8,6 +8,16 @@ password: password123
 
 ## Getting Started
 
+First, install the npm 
+
+```bash
+
+npm install
+# or
+yarn
+
+```
+
 First, run the development server:
 
 ```bash
