@@ -6,11 +6,7 @@ import { writeFile } from "fs/promises";
 
 export async function PUT(
   request: NextRequest,
-  {
-    params,
-  }: {
-    params: { id: string };
-  }
+  context: { params: { id: string } }
 ) {
   const cookie = request.headers.get("cookie");
   const tokenMatch = cookie?.match(/token=([^;]+)/);
@@ -21,7 +17,7 @@ export async function PUT(
   }
 
   try {
-    const id = params.id;
+    const id = context.params.id;
     const body = await request.json();
     const { status } = body;
 
